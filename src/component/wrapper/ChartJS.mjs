@@ -16,7 +16,11 @@ class ChartJS extends Component {
          * @member {String} ntype='chartjs-component'
          * @protected
          */
-        ntype: 'chartjs-component'
+        ntype: 'chartjs-component',
+        /**
+         * @member {Object} chartConfig=null
+         */
+        chartConfig: null
     }
     /**
      * Triggered after the offscreenRegistered config got changed
@@ -26,10 +30,9 @@ class ChartJS extends Component {
      */
     afterSetOffscreenRegistered(value, oldValue) {
         if (value) {
-            console.log('afterSetOffscreenRegistered', this.id);
-            Charts.canvas.Helper.createChartInstance({
-                id: this.id
-            })
+            let {chartConfig, id} = this;
+
+            Charts.canvas.Helper.createChartInstance({chartConfig, id})
         }
     }
 }

@@ -31,29 +31,13 @@ class Helper extends Base {
 
     /**
      *
-     * @param {Object} config
+     * @param {Object} opts
+     * @param {Object} opts.config
+     * @param {Object} opts.id
      */
-    createChartInstance(config) {
-        const canvas = Neo.currentWorker.map[config.id];
-
-        const chart = new Chart(canvas, {
-            type   : 'bar',
-            data   : {
-                labels  : ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-                datasets: [{
-                    label      : '# of Votes',
-                    data       : [12, 19, 3, 5, 2, 3],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
+    createChartInstance(opts) {
+        let canvas = Neo.currentWorker.map[opts.id],
+            chart  = new Chart(canvas, opts.chartConfig);
 
         canvas.width  = 600;
         canvas.height = 400;
