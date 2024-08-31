@@ -4,7 +4,10 @@
 /dist
 /docs/output
 /examples
+
 /node_modules
+!/node_modules/chart.js
+!/node_modules/chart.js/*
 
 # IDEs and editors
 /.idea

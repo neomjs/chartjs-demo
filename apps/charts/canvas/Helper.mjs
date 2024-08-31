@@ -1,4 +1,7 @@
-import Base from '../../../node_modules/neo.mjs/src/core/Base.mjs';
+import Base  from '../../../node_modules/neo.mjs/src/core/Base.mjs';
+import Chart from '../../../node_modules/chart.js/auto/auto.js';
+
+console.log(Chart);
 
 /**
  * @class Charts.canvas.Helper
