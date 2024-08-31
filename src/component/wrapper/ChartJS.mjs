@@ -25,7 +25,12 @@ class ChartJS extends Component {
      * @protected
      */
     afterSetOffscreenRegistered(value, oldValue) {
-        value && console.log('afterSetOffscreenRegistered', this.id);
+        if (value) {
+            console.log('afterSetOffscreenRegistered', this.id);
+            Charts.canvas.Helper.createChartInstance({
+                id: this.id
+            })
+        }
     }
 }
 

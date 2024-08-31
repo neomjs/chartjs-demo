@@ -17,9 +17,9 @@ class Viewport extends BaseViewport {
          */
         items: [{
             module: ChartComponent,
-            height: 300,
-            width : 500,
-            style : {backgroundColor: 'lightblue', flex: 'none', margin: '20px'}
+            height: 400,
+            width : 600,
+            style : {flex: 'none', margin: '20px'}
         }],
         /*
          * @member {Object} layout={ntype:'fit'}
