@@ -45,6 +45,9 @@ class Viewport extends BaseViewport {
                 items: [{
                     handler: 'onAddDataButtonClick',
                     text   : 'Add Data'
+                }, {
+                    handler: 'onRemoveDataButtonClick',
+                    text   : 'Remove Data'
                 }]
             }]
         }],

@@ -19,6 +19,13 @@ class ViewportController extends Component {
     onAddDataButtonClick(data) {
         console.log('onAddDataButtonClick', data)
     }
+
+    /**
+     * @param {Object} data
+     */
+    onRemoveDataButtonClick(data) {
+        console.log('onRemoveDataButtonClick', data)
+    }
 }
 
 export default Neo.setupClass(ViewportController);

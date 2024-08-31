@@ -25,6 +25,9 @@ class LineChart extends ChartComponent {
                 }]
             },
             options: {
+                layout: {
+                    padding: 10
+                },
                 scales: {
                     y: {
                         beginAtZero: true
