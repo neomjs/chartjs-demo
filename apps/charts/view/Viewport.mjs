@@ -16,6 +16,10 @@ class Viewport extends BaseViewport {
          */
         className: 'Charts.view.Viewport',
         /**
+         * @member {String[]} cls=['charts-viewport']
+         */
+        cls: ['charts-viewport'],
+        /**
          * @member {Neo.controller.Component} controller=ViewportController
          */
         controller: ViewportController,
@@ -29,14 +33,13 @@ class Viewport extends BaseViewport {
 
             items: [{
                 module: BarChart,
-                height: 400,
-                width : 600
+                cls   : 'chart-canvas'
             }, {
                 module: LineChart,
-                height: 400,
-                width : 600
+                cls   : 'chart-canvas'
             }, {
                 module: Toolbar,
+                cls   : 'charts-action-toolbar',
                 flex  : 'none',
 
                 items: [{
