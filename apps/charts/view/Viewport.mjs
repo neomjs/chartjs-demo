@@ -1,5 +1,5 @@
-import BaseViewport   from '../../../node_modules/neo.mjs/src/container/Viewport.mjs';
-import ChartComponent from '../../../src/component/wrapper/ChartJS.mjs';
+import BarChart     from './BarChart.mjs';
+import BaseViewport from '../../../node_modules/neo.mjs/src/container/Viewport.mjs';
 
 /**
  * @class Charts.view.Viewport
@@ -16,10 +16,10 @@ class Viewport extends BaseViewport {
          * @member {Object[]} items
          */
         items: [{
-            module: ChartComponent,
+            module: BarChart,
             height: 400,
             width : 600,
-            style : {flex: 'none', margin: '20px'}
+            style : {flex: 'none'}
         }],
         /*
          * @member {Object} layout={ntype:'fit'}

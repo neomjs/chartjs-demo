@@ -55,10 +55,12 @@ class Helper extends Base {
             }
         });
 
-        canvas.height = 400;
         canvas.width  = 600;
+        canvas.height = 400;
 
-        chart.resize()
+        chart.resize();
+
+        console.log(chart);
     }
 }
 
