@@ -1,6 +1,8 @@
-import BarChart     from './BarChart.mjs';
-import BaseViewport from '../../../node_modules/neo.mjs/src/container/Viewport.mjs';
-import LineChart    from './LineChart.mjs';
+import BarChart           from './BarChart.mjs';
+import BaseViewport       from '../../../node_modules/neo.mjs/src/container/Viewport.mjs';
+import LineChart          from './LineChart.mjs';
+import Toolbar            from '../../../node_modules/neo.mjs/src/toolbar/Base.mjs';
+import ViewportController from './ViewportController.mjs';
 
 /**
  * @class Charts.view.Viewport
@@ -14,6 +16,10 @@ class Viewport extends BaseViewport {
          */
         className: 'Charts.view.Viewport',
         /**
+         * @member {Neo.controller.Component} controller=ViewportController
+         */
+        controller: ViewportController,
+        /**
          * @member {Object[]} items
          */
         items: [{
@@ -24,13 +30,19 @@ class Viewport extends BaseViewport {
             items: [{
                 module: BarChart,
                 height: 400,
-                width : 600,
-                style : {flex: 'none'}
+                width : 600
             }, {
                 module: LineChart,
                 height: 400,
-                width : 600,
-                style : {flex: 'none'}
+                width : 600
+            }, {
+                module: Toolbar,
+                flex  : 'none',
+
+                items: [{
+                    handler: 'onAddDataButtonClick',
+                    text   : 'Add Data'
+                }]
             }]
         }],
         /*
