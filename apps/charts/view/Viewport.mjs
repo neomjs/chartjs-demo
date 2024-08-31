@@ -17,30 +17,13 @@ class Viewport extends BaseViewport {
          * @member {Object[]} items
          */
         items: [{
-            module: TabContainer,
+            module: Component,
             height: 300,
+            id    : 'my-canvas', // todo
             width : 500,
-            style : {flex: 'none', margin: '20px'},
+            style : {backgroundColor: 'lightblue', flex: 'none', margin: '20px'},
+            tag   : 'canvas'
 
-            itemDefaults: {
-                module: Component,
-                cls   : ['neo-examples-tab-component'],
-                style : {padding: '20px'},
-            },
-
-            items: [{
-                tabButtonConfig: {
-                    iconCls: 'fa fa-home',
-                    text   : 'Tab 1'
-                },
-                vdom: {innerHTML: 'Welcome to your new Neo App.'}
-            }, {
-                tabButtonConfig: {
-                    iconCls: 'fa fa-play-circle',
-                    text   : 'Tab 2'
-                },
-                vdom: {innerHTML: 'Have fun creating something awesome!'}
-            }]
         }],
         /*
          * @member {Object} layout={ntype:'fit'}
