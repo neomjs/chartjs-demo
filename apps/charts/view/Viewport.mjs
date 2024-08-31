@@ -1,6 +1,5 @@
-import Component    from '../../../node_modules/neo.mjs/src/component/Base.mjs';
-import TabContainer from '../../../node_modules/neo.mjs/src/tab/Container.mjs';
-import BaseViewport from '../../../node_modules/neo.mjs/src/container/Viewport.mjs';
+import BaseViewport   from '../../../node_modules/neo.mjs/src/container/Viewport.mjs';
+import ChartComponent from '../../../src/component/wrapper/ChartJS.mjs';
 
 /**
  * @class Charts.view.Viewport
@@ -17,13 +16,10 @@ class Viewport extends BaseViewport {
          * @member {Object[]} items
          */
         items: [{
-            module: Component,
+            module: ChartComponent,
             height: 300,
-            id    : 'my-canvas', // todo
             width : 500,
-            style : {backgroundColor: 'lightblue', flex: 'none', margin: '20px'},
-            tag   : 'canvas'
-
+            style : {backgroundColor: 'lightblue', flex: 'none', margin: '20px'}
         }],
         /*
          * @member {Object} layout={ntype:'fit'}
