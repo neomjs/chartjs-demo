@@ -1,22 +1,18 @@
 import Component    from '../../../node_modules/neo.mjs/src/component/Base.mjs';
 import TabContainer from '../../../node_modules/neo.mjs/src/tab/Container.mjs';
-import Viewport     from '../../../node_modules/neo.mjs/src/container/Viewport.mjs';
+import BaseViewport from '../../../node_modules/neo.mjs/src/container/Viewport.mjs';
 
 /**
- * @class Charts.view.MainContainer
+ * @class Charts.view.Viewport
  * @extends Neo.container.Viewport
  */
-class MainContainer extends Viewport {
+class Viewport extends BaseViewport {
     static config = {
         /**
-         * @member {String} className='Charts.view.MainContainer'
+         * @member {String} className='Charts.view.Viewport'
          * @protected
          */
-        className: 'Charts.view.MainContainer',
-        /**
-         * @member {Boolean} autoMount=true
-         */
-        autoMount: true,
+        className: 'Charts.view.Viewport',
         /**
          * @member {Object[]} items
          */
@@ -53,4 +49,4 @@ class MainContainer extends Viewport {
     }
 }
 
-export default Neo.setupClass(MainContainer);
+export default Neo.setupClass(Viewport);
