@@ -1,21 +1,21 @@
 import ChartComponent from '../../../src/component/wrapper/ChartJS.mjs';
 
 /**
- * @class Charts.view.BarChart
+ * @class Charts.view.LineChart
  * @extends Neo.component.wrapper.ChartJS
  */
-class BarChart extends ChartComponent {
+class LineChart extends ChartComponent {
     static config = {
         /**
-         * @member {String} className='Charts.view.BarChart'
+         * @member {String} className='Charts.view.LineChart'
          * @protected
          */
-        className: 'Charts.view.BarChart',
+        className: 'Charts.view.LineChart',
         /**
          * @member {Object} chartConfig
          */
         chartConfig: {
-            type   : 'bar',
+            type   : 'line',
             data   : {
                 labels  : ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
                 datasets: [{
@@ -35,4 +35,4 @@ class BarChart extends ChartComponent {
     }
 }
 
-export default Neo.setupClass(BarChart);
+export default Neo.setupClass(LineChart);
