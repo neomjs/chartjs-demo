@@ -19,7 +19,9 @@ class Helper extends Base {
          */
         remote: {
             app: [
-                'createChartInstance'
+                'addRandomData',
+                'createChartInstance',
+                'removeLastDataPoint'
             ]
         },
         /**
@@ -30,7 +32,28 @@ class Helper extends Base {
     }
 
     /**
-     *
+     * @member {Map} charts=new Map()
+     */
+    charts = new Map()
+
+    /**
+     * @param {Object} opts
+     * @param {Number} [opts.max=20]
+     * @param {Number} [opts.min=0]
+     */
+    addRandomData(opts) {
+        let max   = Neo.isNumber(opts?.max) ? opts.max : 20,
+            min   = Neo.isNumber(opts?.min) ? opts.min :  0,
+            value = Math.floor(Math.random() * (max - min + 1) + min);
+
+        this.charts.forEach(chart => {
+            chart.data.datasets[0].data.push(value);
+            chart.data.labels.push('Random ' + (value));
+            chart.update()
+        })
+    }
+
+    /**
      * @param {Object} opts
      * @param {Object} opts.config
      * @param {Object} opts.id
@@ -39,12 +62,28 @@ class Helper extends Base {
         let canvas = Neo.currentWorker.map[opts.id],
             chart  = new Chart(canvas, opts.chartConfig);
 
+        this.charts.set(opts.id, chart);
+
+        console.log(this.charts);
+
         canvas.width  = 600;
         canvas.height = 400;
 
         chart.resize();
 
         console.log(chart);
+    }
+
+
+    /**
+     *
+     */
+    removeLastDataPoint() {
+        this.charts.forEach(chart => {
+            chart.data.datasets[0].data.pop();
+            chart.data.labels.pop();
+            chart.update()
+        })
     }
 }
 

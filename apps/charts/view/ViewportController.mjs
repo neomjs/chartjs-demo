@@ -17,14 +17,14 @@ class ViewportController extends Component {
      * @param {Object} data
      */
     onAddDataButtonClick(data) {
-        console.log('onAddDataButtonClick', data)
+        Charts.canvas.Helper.addRandomData()
     }
 
     /**
      * @param {Object} data
      */
     onRemoveDataButtonClick(data) {
-        console.log('onRemoveDataButtonClick', data)
+        Charts.canvas.Helper.removeLastDataPoint()
     }
 }
 
